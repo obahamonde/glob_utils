@@ -5,3 +5,4 @@
 *.pyd
 *.swp
 *.lock
+.DS_Store
