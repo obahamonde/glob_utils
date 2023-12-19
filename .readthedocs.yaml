@@ -11,3 +11,9 @@ python:
 
 sphinx:
   configuration: docs/conf.py
+
+formats:
+  - pdf
+  - htmlzip
+  - epub
+
