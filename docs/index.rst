@@ -7,17 +7,10 @@ Welcome to Glob Utils's documentation!
 ======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    glob_utils
-   glob_utils.apiClient
-   glob_utils.controller
-   glob_utils.eventSource
-   glob_utils.repository
-   glob_utils.typedef
-   glob_utils.utils
-
 
 Indices and tables
 ==================
