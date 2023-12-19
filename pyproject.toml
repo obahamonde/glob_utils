@@ -6,7 +6,7 @@ authors = ["Oscar Bahamonde <o.bahamonde@globant.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 httpx = "^0.25.2"
 rich = "^13.7.0"
 tenacity = "^8.2.3"
