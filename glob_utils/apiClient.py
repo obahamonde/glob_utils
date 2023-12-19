@@ -1,4 +1,4 @@
-from typing import Any, AsyncIterator, Dict, List, Literal, Optional, TypeVar, Union
+from typing import Any, AsyncIterable, Dict, List, Literal, Optional, TypeVar, Union
 
 from httpx import AsyncClient
 from pydantic import BaseModel  # pylint: disable=E0611
@@ -194,7 +194,7 @@ class APIClient(BaseModel, LazyProxy[AsyncClient]):
         params: Optional[Dict[str, Scalar]] = None,
         json: Optional[Json] = None,
         headers: Optional[Dict[str, str]] = None,
-    ) -> AsyncIterator[bytes]:
+    ) -> AsyncIterable[bytes]:
         if headers is not None:
             self.headers.update(headers)
             headers = self.headers

@@ -69,7 +69,9 @@ class Repository(Generic[I, O], ABC):
     """
 
     @abstractmethod
-    async def get(self: Repository[I, O], *, key: str, index:Optional[str]) -> Optional[O]:
+    async def get(
+        self: Repository[I, O], *, key: str, index: Optional[str]
+    ) -> Optional[O]:
         raise NotImplementedError
 
     @abstractmethod
@@ -81,11 +83,13 @@ class Repository(Generic[I, O], ABC):
         raise NotImplementedError
 
     @abstractmethod
-    async def delete(self: Repository[I,O], *, key: str, index:Optional[str]) -> None:
+    async def delete(self: Repository[I, O], *, key: str, index: Optional[str]) -> None:
         raise NotImplementedError
 
     @abstractmethod
-    async def list(self: Repository[I, O],*, limit:Optional[int], offset:Optional[int]) -> Page[O]:
+    async def list(
+        self: Repository[I, O], *, limit: Optional[int], offset: Optional[int]
+    ) -> Page[O]:
         raise NotImplementedError
 
     @abstractmethod
