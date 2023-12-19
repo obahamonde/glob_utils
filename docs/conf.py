@@ -9,10 +9,9 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath("../"))
-project = "glob_utils"
+project = "Glob Utils"
 copyright = "2023, Oscar Bahamonde"
 author = "Oscar Bahamonde"
-release = "0.0.5"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -36,12 +35,14 @@ extensions = [
     "sphinx_sitemap",
 ]
 
+
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-site_url = "https://glob-utils.readthedocs.io/en/latest/"
+
 html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
+html_baseurl = "https://glob-utils.readthedocs.io/en/latest/"
