@@ -2,3 +2,11 @@ sphinx
 sphinx-rtd-theme
 sphinxcontrib-napoleon
 sphinx-sitemap
+sphinxcontrib-plantuml
+sphinxcontrib-mermaid
+sphinxcontrib-actdiag
+sphinxcontrib-blockdiag
+sphinxcontrib-nwdiag
+sphinxcontrib-seqdiag
+sphinxcontrib-aafig
+sphinxcontrib-asyncio

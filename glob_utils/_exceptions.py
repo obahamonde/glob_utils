@@ -5,12 +5,11 @@ from __future__ import annotations
 
 from functools import singledispatch
 
-from fastapi import HTTPException
 from httpx import RequestError
 from pydantic import ValidationError
 from typing_extensions import Generic, Type, TypeVar
 
-E = TypeVar("E", bound=Exception, contravariant=True)
+E = TypeVar("E", bound=Exception)
 
 EXCEPTIONS: dict[str, int] = {
     "ConnectError": 503,
@@ -54,6 +53,35 @@ EXCEPTIONS: dict[str, int] = {
 }
 
 
+class HTTPException(Exception):
+    """
+    HTTP Base Exception
+    """
+
+    def __init__(
+        self, status_code: int = 500, detail: str = "Internal Server Error"
+    ) -> None:
+        """
+        HTTP Exception
+
+        Arguments:
+                                    - status_code: HTTP status code
+                                    - detail: Message to be displayed
+        """
+        self.status_code = status_code
+        self.detail = detail
+        super().__init__(self.detail)
+
+    def json(self) -> dict[str, str | int]:
+        """
+        Return a JSON representation of the exception
+
+        Returns:
+                                    - dict[str, str]: JSON representation of the exception
+        """
+        return {"status_code": self.status_code, "detail": self.detail}
+
+
 class APIException(HTTPException, Generic[E]):
     """
     API Exception
@@ -94,7 +122,9 @@ def _(exc: ValidationError) -> APIException[ValidationError]:
 @handle_exception.register(RequestError)
 def _(exc: RequestError) -> APIException[RequestError]:
     request_info = f"{exc.__class__.__name__}: {exc.request.method} {exc.request.url}"
-    raise HTTPException(status_code=EXCEPTIONS[exc.__class__.__name__], detail=request_info)
+    raise HTTPException(
+        status_code=EXCEPTIONS[exc.__class__.__name__], detail=request_info
+    )
 
 
 @handle_exception.register(Exception)

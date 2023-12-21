@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "glob-utils"
-version = "0.0.5"
+version = "0.0.6"
 description = ""
 authors = ["Oscar Bahamonde <o.bahamonde@globant.com>"]
 readme = "README.md"
@@ -11,9 +11,6 @@ httpx = "^0.25.2"
 rich = "^13.7.0"
 tenacity = "^8.2.3"
 pydantic = "1.10.12"
-fastapi = "^0.105.0"
-sse-starlette = "^1.8.2"
-
 
 [tool.poetry.group.dev.dependencies]
 sphinx = "^7.2.6"

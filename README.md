@@ -1,6 +1,6 @@
 # Glob Utils
 
-Utilities and abstractions to work with FastAPI, Httpx and Pydantic.
+Utilities and abstractions to work with Httpx and Pydantic.
 
 ## Installation
 
